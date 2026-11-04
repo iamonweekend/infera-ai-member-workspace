@@ -1,0 +1,218 @@
+/* ==========================================================================
+   INFERA AI — MINIMALIST THREE-ZONE MEMBER WORKSPACE
+   Reference-Based UI Design Architecture
+   Zone 1: #171717 Dark Left Rail
+   Zone 2: #F0F1F2 Light Grey Secondary Sidebar
+   Zone 3: #FFFFFF Clean White Main Workspace
+   ========================================================================== */
+
+:root {
+  --primary-dark: #171717;
+  --sidebar-bg: #F0F1F2;
+  --workspace-bg: #FFFFFF;
+  --surface-secondary: #F7F7F7;
+  --light-border: #E8E8E8;
+  --primary-text: #202124;
+  --secondary-text: #85898D;
+  --muted-text: #A2A6AA;
+  --accent: #526D5C;
+  --soft-accent: #EAF0EB;
+  --selected-pill: #E2E4E6;
+
+  --font-manrope: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--primary-dark);
+  color: var(--primary-text);
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Utilities */
+.font-manrope {
+  font-family: var(--font-manrope);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* Page & Section Headings */
+h1 {
+  font-family: var(--font-manrope);
+  font-size: clamp(26px, 2.5vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--primary-text);
+}
+
+h2 {
+  font-family: var(--font-manrope);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--primary-text);
+}
+
+h3 {
+  font-family: var(--font-manrope);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--primary-text);
+}
+
+/* Secondary Sidebar Section Headings (like 'Status', 'Group' in reference) */
+.sidebar-section-title {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-text);
+  letter-spacing: -0.01em;
+}
+
+/* Sidebar List Item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font-family: var(--font-inter);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--primary-text);
+  transition: all 0.14s ease;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background-color: #E7E8EA;
+}
+
+.sidebar-item.active {
+  background-color: var(--selected-pill);
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+/* Primary Action Buttons */
+.btn-primary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background-color: var(--primary-dark);
+  color: #FFFFFF;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--primary-dark);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-primary-dark:hover {
+  background-color: #262626;
+  border-color: #262626;
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--accent);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-accent:hover {
+  background-color: #42584a;
+  border-color: #42584a;
+}
+
+.btn-outline-neutral {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background-color: #FFFFFF;
+  color: var(--primary-text);
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--lightBorder);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-outline-neutral:hover {
+  background-color: var(--surface-secondary);
+  border-color: #D6D6D6;
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D2D4D7;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B6B9BD;
+}
+
+/* Shimmer Animation for loading state */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #F0F1F2 0px, #FFFFFF 50%, #F0F1F2 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+}

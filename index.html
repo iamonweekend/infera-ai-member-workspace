@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23171717'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infera AI — Member Workspace</title>
+
+    <!-- Google Fonts: Manrope, Inter, DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN with Exact Reference Palette -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primaryDark: '#171717',
+              sidebarBg: '#F0F1F2',
+              workspaceBg: '#FFFFFF',
+              surfaceSecondary: '#F7F7F7',
+              lightBorder: '#E8E8E8',
+              primaryText: '#202124',
+              secondaryText: '#85898D',
+              mutedText: '#A2A6AA',
+              accent: '#526D5C',
+              softAccent: '#EAF0EB',
+              selectedPill: '#E2E4E6'
+            },
+            fontFamily: {
+              manrope: ['Manrope', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+              sans: ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#171717] text-[#202124] antialiased selection:bg-[#EAF0EB] selection:text-[#526D5C] overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
